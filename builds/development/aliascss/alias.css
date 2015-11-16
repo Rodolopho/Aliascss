@@ -8,60 +8,18 @@
  * value like larger-lr,smaller-sr,caption-cp,cell-cl
  * nl-normal,db-double,ds-dashed,dt-dotted,avoid-av,t-tn,con-contain,decimal-dc,compact-cp,sth-strecth,bottom-btm
  * and for some poperty  alias max-width xw,and max-height-xh ,transform-tf,bottom-btm*/
-/*helper class*/
-		/* http://meyerweb.com/eric/tools/css/reset/ 
-   			v2.0 | 20110126
-   		License: none (public domain)
-		*/
-			/*html, body, div, span, applet, object, iframe,
-			h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-			a, abbr, acronym, address, big, cite, code,
-			del, dfn, em, img, ins, kbd, q, s, samp,
-			small, strike, strong, sub, sup, tt, var,
-			b, u, i, center,
-			dl, dt, dd, ol, ul, li,
-			fieldset, form, label, legend,
-			table, caption, tbody, tfoot, thead, tr, th, td,
-			article, aside, canvas, details, embed, 
-			figure, figcaption, footer, header, hgroup, 
-			menu, nav, output, ruby, section, summary,
-			time, mark, audio, video {
-				margin: 0;
-				padding: 0;
-				border: 0;
-				font-size: 100%;
-				font: inherit;
-				vertical-align: baseline;
-			}*/
-			/*/* HTML5 display-role reset for older browsers *
-			article, aside, details, figcaption, figure, 
-			footer, header, hgroup, menu, nav, section {
-				display: block;
-			}
-			body {
-				line-height: 1;
-			}
-			ol, ul {
-				list-style: none;
-			}
-			blockquote, q {
-				quotes: none;
-			}
-			blockquote:before, blockquote:after,
-			q:before, q:after {
-				content: '';
-				content: none;
-			}
-			table {
-				border-collapse: collapse;
-				border-spacing: 0;
-			}*/
+/*helper classes*/
 			
 		/*clearFix as a cfx*/
 .cfx:before,.cfx:after {content: "";display: table;border-collapse: collapse;}	
 .cfx:after {clear: both;}  
 
-/*--------------DEFINE DEFAULT VALUES FOR PROPERTY-------------------------- */
+/* Updates*/
+.h_flin:hover,.a_flin:active,.l_flin:link,.flin{filter: inherit;}
+.h_fli:hover,.a_fli:active,.l_fli:link,.fli{filter: initial;}
+.h_flu:hover,.a_flu:active,.l_flu:link,.flu{filter: unset;}
+
+/*--------------DEFINE DEFAULT VALUES FOR PROPERTY(core)-------------------------- */
 .h_acfe:hover,.a_acfe:active,.l_acfe:link,.acfe{align-content: flex-end;}
 .h_acfs:hover,.a_acfs:active,.l_acfs:link,.acfs{align-content: flex-start;}
 .h_acsa:hover,.a_acsa:active,.l_acsa:link,.acsa{align-content: space-around;}
@@ -328,7 +286,7 @@
 .h_csr:hover,.a_csr:active,.l_csr:link,.csr{cursor: s-resize;}
 .h_cst:hover,.a_cst:active,.l_cst:link,.cst{caption-side: top;}
 .h_cswr:hover,.a_cswr:active,.l_cswr:link,.cswr{cursor: sw-resize;}
-.h_c_t:hover,.a_c_t:active,.l_c_t:link,.c_t{transparent;}
+.h_c_t:hover,.a_c_t:active,.l_c_t:link,.c_t{color:transparent;}
 .h_ct:hover,.a_ct:active,.l_ct:link,.ct{cursor: text;}
 .h_cvt:hover,.a_cvt:active,.l_cvt:link,.cvt{cursor: vertical-text;}
 .h_cwa:hover,.a_cwa:active,.l_cwa:link,.cwa{column-width: auto;}
@@ -518,15 +476,15 @@
 .h_mwa:hover,.a_mwa:active,.l_mwa:link,.mwa{min-width: auto;}
 .h_o0:hover,.a_o0:active,.l_o0:link,.o0{opacity:0;}
 .h_o10:hover,.a_o10:active,.l_o10:link,.o10{opacity:1;}
-.h_o1:hover,.a_o1:active,.l_o1:link,.o1{opacity:0.h_1:hover,.a_1:active,.l_1:link,.1;}
-.h_o2:hover,.a_o2:active,.l_o2:link,.o2{opacity:0.h_2:hover,.a_2:active,.l_2:link,.2;}
-.h_o3:hover,.a_o3:active,.l_o3:link,.o3{opacity:0.h_3:hover,.a_3:active,.l_3:link,.3;}
-.h_o4:hover,.a_o4:active,.l_o4:link,.o4{opacity:0.h_4:hover,.a_4:active,.l_4:link,.4;}
-.h_o5:hover,.a_o5:active,.l_o5:link,.o5{opacity:0.h_5:hover,.a_5:active,.l_5:link,.5;}
-.h_o6:hover,.a_o6:active,.l_o6:link,.o6{opacity:0.h_6:hover,.a_6:active,.l_6:link,.6;}
-.h_o7:hover,.a_o7:active,.l_o7:link,.o7{opacity:0.h_7:hover,.a_7:active,.l_7:link,.7;}
-.h_o8:hover,.a_o8:active,.l_o8:link,.o8{opacity:0.h_8:hover,.a_8:active,.l_8:link,.8;}
-.h_o9:hover,.a_o9:active,.l_o9:link,.o9{opacity:0.h_9:hover,.a_9:active,.l_9:link,.9;}   
+.h_o1:hover,.a_o1:active,.l_o1:link,.o1{opacity:0.1;}
+.h_o2:hover,.a_o2:active,.l_o2:link,.o2{opacity:0.2;}
+.h_o3:hover,.a_o3:active,.l_o3:link,.o3{opacity:0.3;}
+.h_o4:hover,.a_o4:active,.l_o4:link,.o4{opacity:0.4;}
+.h_o5:hover,.a_o5:active,.l_o5:link,.o5{opacity:0.5;}
+.h_o6:hover,.a_o6:active,.l_o6:link,.o6{opacity:0.6;}
+.h_o7:hover,.a_o7:active,.l_o7:link,.o7{opacity:0.7;}
+.h_o8:hover,.a_o8:active,.l_o8:link,.o8{opacity:0.8;}
+.h_o9:hover,.a_o9:active,.l_o9:link,.o9{opacity:0.9;}   
 .h_oa:hover,.a_oa:active,.l_oa:link,.oa{overflow: auto;}
 .h_oci:hover,.a_oci:active,.l_oci:link,.oci,.h_olci:hover,.a_olci:active,.l_olci:link,.olci{outline-color: invert;}
 .h_oct:hover,.a_oct:active,.l_oct:link,.oct,.h_olct:hover,.a_olct:active,.l_olct:link,.olct,.h_olc_t:hover,.a_olc_t:active,.l_olc_t:link,.olc_t,.h_oc_t:hover,.a_oc_t:active,.l_oc_t:link,.oc_t{outline-color:transparent;}

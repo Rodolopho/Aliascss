@@ -49,11 +49,12 @@
 		"crw":"column-rule-width",
 		//"c"  :"cursor",
 		"cw":"column-width",
-		"f"    :"font",
+		"f_"    :"font",
 		"f":"flex",
 		"fb":"flex-basis",
 		"ff"  :"font-family",
 		"fg":"flex-grow",
+		"fl":"filter",
 		"fs"  :"font-size",
 		"fsk":"flex-shrink",
 		"fsa":"font-size-adjust",
@@ -122,7 +123,7 @@
 	 classListAll:[],
 	//filter class to be listed
 	//following match will be allow add your match if you want custom class also you can define custom function for handling custom class in factory function in makeAndCall object_
-	 filterClass:/(aic|adu|tdu|bgp|bgs|bw|blw|brw|btw|btw|bbw|br|bblrs|btrrs|bblrs|btlrs|btm|bs|cw|cg|crw|fb|fs|h|l|lh|les|m|ma|mt|mr|mb|ml|xw|xh|mw|mh|mo|op|olw|olo|p|pa|pt|pr|pb|pl|pers|perso|r|t|tfo|ts|ti|va|w|ws|cc|fg|fs|o|ord|lh|orp|op|zib|brt|bl|bt|bb|ol|cr)[-]?[0-9]|c_|url[-_]|ff_|f_|(h|a|l|fo)[-_]|bg[i]?(lg|rg)|tf|t_|an_/,
+	 filterClass:/(aic|adu|tdu|bgp|bgs|bw|blw|brw|btw|btw|bbw|br|bblrs|btrrs|bblrs|btlrs|btm|bs|cw|cg|crw|fb|fs|fl[bcgis]|flse|h|l|lh|les|m|ma|mt|mr|mb|ml|xw|xh|mw|mh|mo|op|olw|olo|p|pa|pt|pr|pb|pl|pers|perso|r|t|tfo|ts|ti|va|w|ws|cc|fg|fs|o|ord|lh|orp|op|zib|brt|bl|bt|bb|ol|cr)[-]?[0-9]|c_|url[-_]|ff_|f_|(h|a|l|fo)[-_]|bg[i]?(lg|rg)|tf|t_|an_/,
 	//reptiton count
 	repCount:0,
 	//this checks the our custom style tag where we print the class is already exists for future reference
@@ -552,8 +553,12 @@
 			return [getProperty,getValue];
 		  }
 		},
-	boxShadow:{match:/(bxs|txs)/,
+	boxShadow:{match:/(bxs|txs|flds)/,
 		  callFunction:function(each){//console.log("i am a box");
+		  var fl=false;
+		  if(each.match(/flds/)){
+		  	fl=true;
+		  }
 		  	var propertyAlias=each.match(this.match)[1];
 				getProperty=AliasCSS.alias[propertyAlias];
 				if(each.match(/(bxs|txs)[i]/)){ var i="inset";}else{var i="";}
@@ -562,8 +567,34 @@
 				var color="c_"+split[1];
 				color=AliasCSS.colorProcessor(color);
 				getValue=i+" "+length+" "+color;
+				if(fl){
+					return ['filter',"drop-shadow(" +getValue+")"];
+				}
 			return [getProperty,getValue];
 		  }
+		},
+	filter:{match:/^fl([b|c|g|h|i|o|s][l|r|e]?)[0-9]+/,
+		callFunction:function(each){
+			
+			getProperty='filter';
+			var funcAlias={bl:'blur',b:'brightness',c:'contrast',g:'grayscale',
+				hr:'hue-rotate',i:'invert',o:'opacity',s:'saturate',se:'sepia'};
+			if(each.match(/[d]?[0-9]$/)){
+				
+				funcValue=each.match(/([0-9]*[d]?[0-9]+)/)[0].replace('d', '.');
+				
+			}else if(each.match(/flhr[0-9]+/)){
+				funcValue=AliasCSS.angleTimeFrequencyResolutionProcessor(each);
+			}else{
+				
+				funcValue=AliasCSS.lengthProcessor(each)?AliasCSS.lengthProcessor(each):0;
+				
+			}
+			getValue=funcAlias[each.match(this.match)[1]] + "(" +funcValue +")";
+			return 	[getProperty,getValue];	
+
+		}
+
 		},
 	transform:{match:/^tf/,
 		  callFunction:function(each){//console.log("i am a Transform");
@@ -587,7 +618,7 @@
 	animation:{match:/atf[\w|-]{3}|an[-|_]/,
 		callFunction:function(each){//console.log("i am a Animation");
 			if(each.match(/atf/)){
-				var getProperty="animation-timimg-function"
+				var getProperty="animation-timing-function"
 			}else{
 				var getProperty="animation";
 			}
@@ -615,6 +646,7 @@
 				//escape reppeated classname
 				if(AliasCSS.classListAll.indexOf(eachClass)==-1 && eachClass.match(AliasCSS.filterClass)){
 					//add to classlist for refrerence
+					//console.log(eachClass+ "filter");
 					AliasCSS.classListAll.push(eachClass);
 					//console.log(eachClass);
 					var stateModifier=["",""];
@@ -633,7 +665,7 @@
 					for (key in AliasCSS.matchAndCall){
 						if(eachClass.match(AliasCSS.matchAndCall[key].match)){
 							var result=AliasCSS.matchAndCall[key].callFunction(eachClass);	
-							if(eachClass.match(/^tf|t_/)){//check if its need prefix for property
+							if(eachClass.match(/^tf|t_|pers|perso|fl/)){//check if its need prefix for property
 								var statementConcat="."+stateModifier[0]+eachClass+stateModifier[1]+"{";
 								AliasCSS.prefix.forEach(function(prefix){
 									statementConcat+=prefix+result[0]+":"+result[1]+";";
