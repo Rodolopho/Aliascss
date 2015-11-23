@@ -1,6 +1,6 @@
 #AliasCSS
 #####AliasCss is  css processor that opens a new way of styling to your webpages. Technically  it's a library of  css + javascript that makes your coding \(styling\) easier, faster and experimentable with very ease.
-####*It brings forth a diffrent kind of CSS styling* approach. 
+####*ACSS brings forth a diffrent kind of CSS styling approach.* 
 ###Intro Video :ALiasCSS
 [![Alt AliasCSS Introduction](http://img.youtube.com/vi/6k9j9uz8V-s/0.jpg)](https://youtu.be/6k9j9uz8V-s)
 ##Getting Started
