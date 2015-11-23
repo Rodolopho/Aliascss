@@ -1,11 +1,11 @@
 #AliasCSS
 #####AliasCss is  css processor that opens a new way of styling to your webpages. Technically  it's a library of  css + javascript that makes your coding \(styling\) easier, faster and experimentable with very ease.
-It brings forth a diffrent kind of CSS styling approach. 
+####*It brings forth a diffrent kind of CSS styling* approach. 
 ###Intro Video :ALiasCSS
 [![Alt AliasCSS Introduction](http://img.youtube.com/vi/6k9j9uz8V-s/0.jpg)](https://youtu.be/6k9j9uz8V-s)
 ##Getting Started
 ###Installation
-#####There are two major files in ACSS one is css and another is javascript file.The css file includes all classNames that doesnot require to be compiled. It should be alway used. The javascript file complies the valid ACSS classNames to corresponding defination and outputs in html document under style tag with id "styleAlias", these classNames can be moved anywhere in internal or external stylesheet
+#####There are two major files in ACSS one is css file and another is javascript file.The css file includes all classNames that doesnot require to be compiled. It should be alway used. The javascript file complies the valid ACSS classNames to corresponding defination and outputs in html document under style tag with id "styleAlias", these classNames can be moved anywhere in internal or external stylesheet
 ####[Download AliasCSS](http://aliascss.com/doc.html#downloads)
 ###Let's start exploring AliassCSS with simple template.
 ```html
