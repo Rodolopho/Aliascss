@@ -2,7 +2,7 @@
 #####AliasCss is  css processor that opens a new way of styling to your webpages. Technically  it's a library of  css + javascript that makes your coding \(styling\) easier, faster and experimentable with very ease.
 ####*ACSS brings forth a diffrent kind of CSS styling approach.* 
 ###Intro Video :ALiasCSS
-[![Alt AliasCSS Introduction](http://img.youtube.com/vi/6k9j9uz8V-s/0.jpg)](https://youtu.be/6k9j9uz8V-s)
+[![Alt AliasCSS Introduction](http://img.youtube.com/vi/JFzL5sTO6bM/0.jpg)](https://youtu.be/JFzL5sTO6bM)
 ##Getting Started
 ###Installation
 #####There are two major files in ACSS one is css file and another is javascript file.The css file includes all classNames that doesnot require to be compiled. It should be alway used. The javascript file complies the valid ACSS classNames to corresponding defination and outputs in html document under style tag with id "styleAlias", these classNames can be moved anywhere in internal or external stylesheet
@@ -30,7 +30,8 @@
 </html>
 ```
 ####How it works
-"In AliasCSS , normally every Aliascss's className holds single property and value/s for it. "
+#####"In AliasCSS , normally every Aliascss's className holds single property and value/s for it."
+
 In the above example, look at class attribute of h1 element i.e __\<h1 class="fw6 br5px bgc_hccc c_ngreen p10px dib"\\>Hello, world\!\</h1\>__. This is just ordinary h1 element with class "fw6 br5px bgc_hccc c_ngreen p10px dib". But the classes defined holds special meaning, they are not just classNames they are also aliases of className property and values in the form of classNames----which is compiled to a corresponding property and value by ACSS .
 __fw6 alias for font-wight:600br5px__ alias for __border-radius:5px__ and  __bgc_hccc__ alias for __background-color:#ccc__, here __c_h__ means color by hexadecimal if you want color by name simply use c_n e.g __bgc_nred__
 
